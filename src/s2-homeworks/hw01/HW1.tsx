@@ -1,5 +1,5 @@
 import React from 'react'
-import Message, {MessagePropsType} from './message/Message'
+import Message from './message/Message'
 import MessageSender from './message-sender/MessageSender'
 import s2 from '../../s1-main/App.module.css'
 import FriendMessage from './friend-message/FriendMessage'
@@ -32,11 +32,11 @@ export const message0: MessageType = {
     id: 0,
     user: {
         avatar: avatar, // можно менять
-        name: 'Stas',  // можно менять
+        name: 'Ivan',  // можно менять
     },
     message: {
-        text: 'Hello, how are you, what did you do yesterday?', // можно менять
-        time: '22:00', // можно менять
+        text: 'Hello, she didn’t do anything and rested all day, how are you?', // можно менять
+        time: '09:00', // можно менять
     },
 }
 export const friendMessage0: MessageType = {
@@ -47,24 +47,24 @@ export const friendMessage0: MessageType = {
     },
     message: {
         text: 'Hello, how are you, what did you do yesterday?', // можно менять
-        time: '22:00', // можно менять
+        time: '09:01', // можно менять
     },
 }
 
-const HW1 = () => {      // прописываем название объекта props
-
+const HW1 = () => {
     return (
         <div id={'hw1'}>
-            <div className={s2.hwTitle}>Homework #1</div>
-            <div className={s2.hw}>
-                {/*проверка отображения (не менять)*/}
-                <div>
-                    <Message message={message0}/>      //
-                    <FriendMessage message={friendMessage0}/>
+            <div className={s2.container}>
+                <div className={s2.hwTitle}>Hometask № 1</div>
+                <div className={s2.hw}>
+                    {/*проверка отображения (не менять)*/}
+                    <div className={s2.bodyMessage}>
+                        <Message message={message0}/>
+                        <FriendMessage message={friendMessage0}/>
+                    </div>
+                    {/*для автоматической проверки дз (не менять)*/}
+                    <MessageSender M={Message}/>
                 </div>
-
-                {/*для автоматической проверки дз (не менять)*/}
-                <MessageSender M={Message}/>
             </div>
         </div>
     )
