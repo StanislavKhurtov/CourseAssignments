@@ -12,10 +12,10 @@
     border-radius: 20px;
     width: 100%;
     border: none;
+    resize: none; /*запрещает растягивание textarea и убирает уголок ресайза.*/
 
-    min-height: 40px; /*ограничил топорно чтобы не двигать textarerea*/
     max-height: 40px; /*ограничил топорно чтобы не двигать textarerea*/
-
+    height: 100%;
     font-size: 14px;
     line-height: 17px;
     color: rgba(0, 0, 0, 0.6);
