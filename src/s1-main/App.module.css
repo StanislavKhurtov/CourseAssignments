@@ -2,17 +2,23 @@
     --header_height: 60px;
     font-family: 'Montserrat';
     height: 100%;
+    width: 100vw;
     padding-top: 60px;
     margin: 0 auto;
     background: #FFFFFF;
 }
 
 .hw {
+
     display: flex;
     flex-direction: column;
     gap: 56px;
 
 }
+.hw2 {
+    padding: 37px 0px 73px;
+}
+
 
 .hwTitle {
     font-weight: 600;
@@ -30,6 +36,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 32px;
+
 
 }
 
