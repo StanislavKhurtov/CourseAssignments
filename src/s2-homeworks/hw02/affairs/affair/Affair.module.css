@@ -10,9 +10,10 @@
 .name {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 145px;
+    justify-content: start;
+    width: 147px;
     height: 37px;
+    padding-left: 12px;
 }
 
 .closeButton {
