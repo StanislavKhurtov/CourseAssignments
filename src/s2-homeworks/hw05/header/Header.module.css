@@ -1,11 +1,37 @@
 .burgerMenuIcon {
-
+    padding-top: 7px;
+    width: 25px;
+    height: 30px;
+    transition: 0.5s;
+    z-index: 1;
 }
 
-.header {
+.burgerMenuIcon:hover {
+    transform: rotateX(35deg);
+}
 
+
+.header {
+    background: #FFF;
+    box-shadow: 0px 0px 2px 0px rgba(29, 33, 38, 0.10), 0px 0px 40px 0px rgba(29, 33, 38, 0.13);
 }
 
 .header h1 {
+    color: #000;
+    font-size: 24px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 70px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 
 }

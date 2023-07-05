@@ -3,7 +3,6 @@
     font-family: 'Montserrat';
     height: 100%;
     width: 100vw;
-    padding-top: 60px;
     margin: 0 auto;
     background: #FFFFFF;
 }
@@ -14,6 +13,10 @@
     gap: 56px;
     border-bottom: 1px solid #D9D9D9;
 
+}
+
+.hw1 {
+    padding-top: 47px;
 }
 .hw2 {
     padding: 37px 0px 73px;
