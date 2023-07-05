@@ -23,7 +23,6 @@ export const HW6 = () => {
         if (restoredValue) {
             setValue(restoredValue);
         }
-
     }
 
     return (
