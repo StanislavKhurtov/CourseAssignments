@@ -11,6 +11,10 @@
 
 .input {
     position: absolute;
+    color: #000;
+    font-size: 16px;
+    font-family: 'Montserrat';
+    font-weight: 500;
 }
 
 .pen {
