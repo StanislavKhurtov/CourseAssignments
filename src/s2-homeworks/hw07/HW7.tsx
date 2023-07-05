@@ -17,32 +17,34 @@ const arr = [
     { id: 3, value: 'z' },
 ] // value может быть изменено
 
-const HW7 = () => {
+export const HW7 = () => {
     const [value, onChangeOption] = useState(1) // селект и радио должны работать синхронно
 
     return (
-        <div id={'hw7'}>
-            <div className={s2.hwTitle}>Homework #7</div>
+        <div id={'hw7'} className={s2.hw7}>
+            <div className={s2.container}>
+                <div className={s2.hwTitle}>Hometask № 7</div>
 
-            {/*демонстрация возможностей компонент:*/}
-            <div className={s2.hw}>
-                <div className={s.container}>
-                    <div>
-                        <SuperSelect
-                            id={'hw7-super-select'}
-                            options={arr}
-                            value={value}
-                            onChangeOption={onChangeOption}
-                        />
-                    </div>
-                    <div>
-                        <SuperRadio
-                            id={'hw7-super-radio'}
-                            name={'hw7-radio'}
-                            options={arr}
-                            value={value}
-                            onChangeOption={onChangeOption}
-                        />
+                {/*демонстрация возможностей компонент:*/}
+                <div className={s2.hw}>
+                    <div className={s.container}>
+                        <div>
+                            <SuperSelect
+                                id={'hw7-super-select'}
+                                options={arr}
+                                value={value}
+                                onChangeOption={onChangeOption}
+                            />
+                        </div>
+                        <div>
+                            <SuperRadio
+                                id={'hw7-super-radio'}
+                                name={'hw7-radio'}
+                                options={arr}
+                                value={value}
+                                onChangeOption={onChangeOption}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,4 +52,4 @@ const HW7 = () => {
     )
 }
 
-export default HW7
+
