@@ -8,17 +8,20 @@
 
 
 .radio:checked::before {
+
 }
 
 .label {
     display: flex;
     align-items: center;
+
 }
 
 .options {
     display: flex;
     flex-direction: column;
     gap: 21px;
+
 }
 .span {
     padding-left: 12px;
