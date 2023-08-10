@@ -1,23 +1,59 @@
 .item {
+
 }
 
-.item:last-of-type {
+.item:hover {
+background-color:#E5E5E5 ;
 }
 
 .users {
+    align-self: flex-start;
 }
 
+
 .buttonsContainer {
+    align-self: center;
+    transform: translateX(-40%);
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 4px 23.5px;
 }
 
 .container {
+    padding-top: 32px;
+    padding-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
 }
 
 .thead {
+    background-color: #E5E5E5;
+    display: flex;
+
 }
 
 .nameCol {
+    width: 290px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    padding: 9px 60px 9px 12px;
 }
 
 .ageCol {
+    width: 310px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
 }
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
