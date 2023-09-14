@@ -2,18 +2,18 @@ import React, {
     SelectHTMLAttributes,
     DetailedHTMLProps,
     ChangeEvent,
-} from 'react'
-import s from './SuperSelect.module.css'
+} from 'react';
+import s from './SuperSelect.module.css';
 
 type DefaultSelectPropsType = DetailedHTMLProps<
     SelectHTMLAttributes<HTMLSelectElement>,
     HTMLSelectElement
-    >
+    >;
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
-    options?: any[]
-    onChangeOption?: (option: any) => void
-}
+    options?: { id: number; value: string }[];
+    onChangeOption?: (id: number) => void;
+};
 
 const SuperSelect: React.FC<SuperSelectPropsType> = ({
                                                          options,
@@ -22,7 +22,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
                                                          onChangeOption,
                                                          ...restProps
                                                      }) => {
-    const mappedOptions: any[] = options
+    const mappedOptions = options
         ? options.map((o) => (
             <option
                 id={'hw7-option-' + o.id}
@@ -33,16 +33,19 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
                 {o.value}
             </option>
         ))
-        : [] // map options with key
+        : [];
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-        console.log(e.currentTarget.value)
+        const id = parseInt(e.currentTarget.value);
         if (onChangeOption) {
-          onChangeOption(+e.currentTarget.value);
+            onChangeOption(id);
         }
-    }
+        if (onChange) {
+            onChange(e);
+        }
+    };
 
-    const finalSelectClassName = s.select + (className ? ' ' + className : '')
+    const finalSelectClassName = `${s.select} ` + (className ? ' ' + className : '');
 
     return (
         <select
@@ -52,7 +55,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
         >
             {mappedOptions}
         </select>
-    )
-}
+    );
+};
 
-export default SuperSelect
+export default SuperSelect;

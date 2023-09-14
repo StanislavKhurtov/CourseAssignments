@@ -9,16 +9,17 @@ import s2 from '../../s1-main/App.module.css'
 * 4 - сделать стили в соответствии с дизайном
 * */
 
-const HW9 = () => {
+export const HW9 = () => {
     return (
-        <div id={'hw9'}>
-            <div className={s2.hwTitle}>Homework #9</div>
-
-            <div className={s2.hw}>
-                <Clock />
+        <div id={'hw9'} className={s2.hw9}>
+            <div className={s2.container}>
+                <div className={s2.hwTitle}>Hometask № 9</div>
+                <div className={s2.hw}>
+                    <Clock/>
+                </div>
             </div>
         </div>
     )
 }
 
-export default HW9
+

@@ -18,6 +18,22 @@ html {
     color: var(--color);
 }
 
-.select {
+.text {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
 
+.select {
+    max-width: 171px;
+    height: 36px;
+    width: 100%;
+    padding-left: 6px;
+    font-size: 14px;
+}
+
+.body {
+    padding-top: 30px;
+    padding-bottom: 242px;
+    border-bottom: 1px solid #D9D9D9;
 }

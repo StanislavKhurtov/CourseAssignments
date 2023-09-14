@@ -24,7 +24,7 @@ background-color:#E5E5E5 ;
 
 .container {
     padding-top: 32px;
-    padding-bottom: 28px;
+    padding-bottom: 26px;
     display: flex;
     flex-direction: column;
     gap: 16px;
