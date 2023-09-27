@@ -20,7 +20,9 @@ const themes = [
 ]
 
 const HW12 = () => {
+
     const dispatch = useDispatch()
+
     const themeId = useSelector((state: AppStoreType) => state.theme.themeId);
 
     const change = (id: number) => {

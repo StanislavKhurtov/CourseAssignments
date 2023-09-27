@@ -1,22 +1,50 @@
 .buttonsContainer {
+    display: flex;
+    gap: 22px;
+    margin-bottom: 30px;
 }
 
 .responseContainer {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+
 }
 
 .imageContainer {
+    padding-left: 96px;
 }
 
 .image {
 }
 
-.textContainer{
+.textContainer {
+    font-family: 'Montserrat';
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 30px;
+    white-space: pre-wrap;
+    padding-left: 58px;
 }
 
 .code {
+    font-size: 30px;
+    font-weight: 600;
+
 }
 
 .text {
+    font-size: 16px;
+    font-weight:600;
 }
+
 .info {
+    color: #00cc22;
+}
+
+.body {
+    padding-top: 30px;
+    padding-bottom: 188px;
+    border-bottom: 1px solid #D9D9D9;
 }

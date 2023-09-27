@@ -10,6 +10,7 @@ type DefaultSelectPropsType = DetailedHTMLProps<
     HTMLSelectElement
     >;
 
+
 type SuperSelectPropsType = DefaultSelectPropsType & {
     options?: { id: number; value: string }[];
     onChangeOption?: (id: number) => void;
@@ -45,7 +46,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
         }
     };
 
-    const finalSelectClassName = `${s.select} ` + (className ? ' ' + className : '');
+    const finalSelectClassName = `${s.select} ${className ? ' ' + className : ''}`;
 
     return (
         <select

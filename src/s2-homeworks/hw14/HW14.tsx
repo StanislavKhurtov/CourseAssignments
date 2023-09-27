@@ -31,15 +31,19 @@ const HW14 = () => {
     const [techs, setTechs] = useState<string[]>([])
 
     const sendQuery = (value: string) => {
-        setLoading(true)
+        setLoading(true);
         getTechs(value)
             .then((res) => {
-                // делает студент
-
-                // сохранить пришедшие данные
-
-                //
+                // Сохраняем пришедшие данные
+                if (res && res.data) {
+                    setTechs(res.data.techs);
+                }
+                setLoading(false);
             })
+            .catch((e) => {
+                alert(e.response?.data?.errorText || e.message);
+                setLoading(false);
+            });
     }
 
     const onChangeText = (value: string) => {
@@ -48,7 +52,7 @@ const HW14 = () => {
 
         // добавить/заменить значение в квери урла
         // setSearchParams(
-
+        setSearchParams({find: value});
         //
     }
 
@@ -65,22 +69,25 @@ const HW14 = () => {
     ))
 
     return (
-        <div id={'hw14'}>
-            <div className={s2.hwTitle}>Homework #14</div>
+        <div id={'hw14'} className={s2.hw14}>
+            <div className={s2.container}>
+                <div className={s2.hwTitle}>Hometask № 14</div>
 
-            <div className={s2.hw}>
-                <SuperDebouncedInput
-                    id={'hw14-super-debounced-input'}
-                    value={find}
-                    onChangeText={onChangeText}
-                    onDebouncedChange={sendQuery}
-                />
+                <div className={s.body}>
+                    <SuperDebouncedInput
+                        className={s.input}
+                        id={'hw14-super-debounced-input'}
+                        value={find}
+                        onChangeText={onChangeText}
+                        onDebouncedChange={sendQuery}
+                    />
 
-                <div id={'hw14-loading'} className={s.loading}>
-                    {isLoading ? '...ищем' : <br/>}
+                    <div id={'hw14-loading'} className={s.loading}>
+                        {isLoading ? '...ищем' : <br/>}
+                    </div>
+
+                    {mappedTechs}
                 </div>
-
-                {mappedTechs}
             </div>
         </div>
     )
