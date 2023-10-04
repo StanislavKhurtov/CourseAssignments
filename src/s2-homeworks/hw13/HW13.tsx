@@ -13,55 +13,58 @@ const HW13 = () => {
     const [text, setText] = useState('');
     const [info, setInfo] = useState('');
     const [image, setImage] = useState('');
-    const [buttonsDisabled, setButtonsDisabled] = useState(false);
+    const [buttonsDisabled, setButtonsDisabled] = useState(false)
 
     const send = (x?: boolean | null) => () => {
         const url =
             x === null
-                ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+                ? 'https://samurai.it-incubator.io/api/3.0/homework/test665' // имитация запроса на не корректный адрес
+                : 'https://samurai.it-incubator.io/api/3.0/homework/test'
 
-        if (x === true) {
-            setCode('Код 200!')
-            setImage(success200)
-            setText('...всё ок) \nкод 200 - обычно означает что скорее всего всё ок')
-            setInfo('...loading')
-            setButtonsDisabled(true);
-
-        } else if (x === false) {
-            setCode('Ошибка 400!')
-            setImage(error400)
-            setText('Ты не отправил success в body вообще!\n' +
-                'ошибка 400 - обычно означает что скорее всего фронт\n' +
-                'отправил что-то не то на бэк!')
-            setButtonsDisabled(true);
-
-        } else if (x === undefined) {
-            setCode('Ошибка 500!')
-            setImage(error500)
-            setText('эмитация ошибки на сервере\n' +
-                'ошибка 500 - обычно означает что что-то сломалось на \n' +
-                'сервере, например база данных)')
-            setButtonsDisabled(true);
-
-        } else if (x === null) {
-            setCode('Error!')
-            setImage(errorUnknown)
-            setText('Network Error \n' +
-                'AxiosError')
-            setButtonsDisabled(true);
-
-        }
-
+        setCode('')
+        setImage('')
+        setText('')
+        setInfo('...loading')
+        setButtonsDisabled(true)
         axios.post(url, {success: x})
-            .then((res) => {
-                setButtonsDisabled(false);
-                setInfo('')
+            .then(() => {
+                setCode('Код 200!')
+                setImage(success200)
+                setText('...всё ок)');
+                setInfo('код 200 - обычно означает что скорее всего всё ок)');
             })
             .catch((e) => {
-                setButtonsDisabled(false);
-                setInfo('')
+                if (e.response) {
+                    if (e.response.status === 400) {
+                        setCode('Ошибка 400!');
+                        setImage(error400);
+                        setText('Ты не отправил success в body вообще!');
+                        setInfo('ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!');
+                        setButtonsDisabled(false);
+                    } else if (e.response.status === 500) {
+                        setCode('Ошибка 500!');
+                        setImage(error500);
+                        setText('эмитация ошибки на сервере');
+                        setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)');
+                        setButtonsDisabled(false);
+                    } else {
+                        setCode('Error!');
+                        setImage(errorUnknown);
+                        setText('Network Error');
+                        setInfo('AxiosError');
+                        setButtonsDisabled(false);
+                    }
+                } else {
+                    setCode('Error!');
+                    setImage(errorUnknown);
+                    setText('Network Error');
+                    setInfo('AxiosError');
+                    setButtonsDisabled(false);
+                }
             })
+            .finally(() => {
+                setButtonsDisabled(false);
+            });
     }
 
     return (
